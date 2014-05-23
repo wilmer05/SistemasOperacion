@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include"estructuras.h"
+
+const int tam = 1000;
+
+char comando[tam];
+FILE *f1;
+File *f2;
+int main(){
+
+
+	return 0;
+}
