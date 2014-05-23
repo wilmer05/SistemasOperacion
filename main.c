@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 #include"estructuras.h"
 
 #define TAM 1000
@@ -16,7 +18,7 @@ int IsaNumber(int num, char arg)
   return (1);
 }
 
-main (int argc, char *argv[]){
+int main (int argc, char *argv[]){
 	int num_I, num_P, num_N, num_F;
   	char *arch1, *arch2;
 	int posicion;
@@ -105,17 +107,26 @@ main (int argc, char *argv[]){
 		//creo inodo
 
 	}
-	close(f1);
+	fclose(f1);
 	
 	char modo[5];
 	while(fgets(comando,TAM,f2)!=NULL){
 		sscanf(comando,"%d %s %s",&t1,modo,fecha2);
 		printf("%d %s %s\n",t1,modo,fecha2);
+		if(modo[0]=='T'){
+			t1 = atoi(fecha2);
+		}
+		else if(modo[0]=='F'){
+		}
+		else{
+			t1 = atoi(fecha2);
+
+		}
 
 		//creo inodo
 
 	}
-	close(f2);
+	fclose(f2);
 	
 
 	return 0;
