@@ -4,10 +4,10 @@ OBJ = main.o
 OPT = -std=c99
 PROG = troyx
 
-$(PROG): $(HEAD) $(OBJ)
+$(PROG): $(OBJ) $(HEAD)
 	$(CC) $(OBJ) -o $(PROG) $(OPT)
 
-main.o: $(HEAD) main.c
+main.o: main.c $(HEAD)
 	$(CC) -c main.c $(OPT)
 
 clean:

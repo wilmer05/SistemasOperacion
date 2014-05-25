@@ -106,6 +106,7 @@
 	    files[i] = fopen(f,"ra+");
 	    
 	  }
+	  printf("bla");
 	    
 	}
 	
