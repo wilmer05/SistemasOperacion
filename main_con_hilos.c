@@ -39,6 +39,8 @@ int main (int argc, char *argv[]){
 	//modifico todo lo que tenga que modificar en las 
 	//particiones
 	
+	//la variable j representa a que hilo
+	//le tocara modificar la particion i del ciclo for
 	int j=0;
 	for(int i=0;i<N;i++){
 	  hilos[i].y=j;
