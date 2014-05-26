@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<pthread.h>
+#include"tiempo.h"
 #include"entrada.h"
 #include"estructuras.h"
 
@@ -13,6 +14,7 @@ pthread_t ids[110];
 
 void *act(void *ptr){
 	  int hilo = ((par *)ptr)->y;
+	  int tiempo_solo = Tomar_Tiempo();
 	  pthread_mutex_lock(&ms[hilo]);
 	  int part = ((par *)ptr)->x;
 	  
@@ -24,23 +26,31 @@ void *act(void *ptr){
 	      modificar_particion(part,I/N+i);
 	  
 	  pthread_mutex_unlock(&ms[hilo]);
+	  printf("Tiempo de la unidad de hilo %d, encargado de la\
+particion %d es :%d\n",\
+				  hilo,part,Tomar_Tiempo()-tiempo_solo);
 }
 
 
 int main (int argc, char *argv[]){
 
+	t_total1 = Tomar_Tiempo();
 	validar_inicializar(argc, argv);
-  
+	
 	
 	for(int i=0;i<110;i++)
 	   pthread_mutex_init(&ms[i],NULL);
 	
 	abro_particiones_modif();
+	
+	//medidor del tiempo de ejecucion de todos los procesos
+	total_proc1 = Tomar_Tiempo();
+	
 	//modifico todo lo que tenga que modificar en las 
 	//particiones
 	
 	//la variable j representa a que hilo
-	//le tocara modificar la particion i
+	//le tocara modificar la particion i del ciclo for
 	int j=0;
 	for(int i=0;i<N;i++){
 	  hilos[i].y=j;
@@ -53,11 +63,16 @@ int main (int argc, char *argv[]){
 	}
 	for(int i=0;i<N;i++)
 	  pthread_join(ids[i],NULL);
+	total_proc2 = Tomar_Tiempo();
+	
 	//termine de modificar y espere a que se modificara todo
 	//y cierro los descriptores para que se guarde
 	cierroParticiones();
 	
+	t_total2 = Tomar_Tiempo();
 	
+	printf("Tiempo total de los procesos %d\n",total_proc2-total_proc1);
+	printf("Tiempo total de ejecucion: %d\n",t_total2-t_total1);
 	/*
 	 * Descomentar el siguiente codigo si quiere que 
 	 * se impriman las particiones

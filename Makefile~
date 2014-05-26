@@ -12,7 +12,7 @@ $(PROG2): $(HEAD) $(OBJ2)
 	$(CC) $(OBJ2) -o $(PROG2) $(OPT)
 
 $(PROG): $(HEAD) $(OBJ)
-	$(CC) $(OBJ) -o $(PROG) $(OPT)
+	$(CC) $(OBJ) -o $(PROG) $(OPT) -lpthread
 
 main_con_procesos.o: $(HEAD) main_con_procesos.c
 	$(CC) -c main_con_procesos.c $(OPT)

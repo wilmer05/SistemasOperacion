@@ -1,5 +1,5 @@
 CC = gcc
-HEAD = estructuras.h entrada.h
+HEAD = estructuras.h entrada.h tiempo.h
 OBJ = main_con_hilos.o
 OBJ2 = main_con_procesos.o
 OPT = -std=c99
