@@ -100,8 +100,11 @@
 	//Imprime todas las particiones en orden, solo
 	//las posiciones ocupadas en las particiones
 	void imprimirTodo(){
-	  for(int i=0;i<N;i++)
+	  for(int i=0;i<N;i++){
+	    printf("Particion %d:\n\n",i+1);
 	    imprimirParticion(i);
+	    printf("\n\n");
+	  }
 	  
 	}
 

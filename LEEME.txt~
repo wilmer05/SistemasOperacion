@@ -1,0 +1,54 @@
+Proyecto de Sistemas de Operacion I
+
+*****************************************************************
+*								*
+*	Hecho por: Wilmer Bandres				*
+*	Carnet: 10-10055					*
+*								*
+*****************************************************************
+
+El proyecto realizado busca implementar un programma llamado toyx,
+que simula la actualizacion de archivos de un sistema de operacion.
+
+Se encuentran dos implementaciones, la hecha por hilos y por 
+procedimientos.
+
+
+La implementacion hecha por hilos, se encuentra en main_con_hilos.c.
+Su ejecutable se llama toyx_con_hilos.
+
+
+La implementacion hecha por procesos, se encuentra en main_con_procesos.c.
+Su ejecutable se llama toyx_con_procesos.
+
+En el archivo de estructuras.h se encuentra todo lo referente a 
+la representacion de los inodos, asi como la tabla de los mismos y 
+tambien todas las funciones referentes a estos.
+
+En el archivo entrada.h se encuentra toda la implementacion para 
+verificacion de entrada.
+
+
+Para la compilacion simplemente ejecute el comando:
+  
+  make
+  
+y el Makefile se encargara de la compilacion
+
+
+En el informe se encuentra una comparacion de ambas implementaciones.
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+IMPORTANTE: 
+
+La funcion para verificar el valor de los inodos en cada 
+particion se llama:
+
+  imprimirTodo();
+  
+y su llamada esta colocada en forma de comentario al final de cada 
+main, solo debe descomentar esa linea y le imprimira el resultado
+de las modificaciones.
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
