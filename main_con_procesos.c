@@ -27,6 +27,7 @@ void *act(void *ptr){
 }
 
 
+//el main se encarga de realizar el flush
 int main (int argc, char *argv[]){
 
 	validar_inicializar(argc, argv);
@@ -38,6 +39,8 @@ int main (int argc, char *argv[]){
 	abro_particiones_modif();
 	//modifico todo lo que tenga que modificar en las 
 	//particiones
+
+	//aqui es donde se realiza el flush
 	
 	int j=0;
 	for(int i=0;i<N;i++){
@@ -62,9 +65,10 @@ int main (int argc, char *argv[]){
 	 * leidas desde los archivos luego de su modificacion
 	*/
 	
-// 	 for(int i=0;i<N;i++)
-// 	      imprimirParticion(i);
 	 
+	
+	imprimirTodo();
+	
 	
 	
 	

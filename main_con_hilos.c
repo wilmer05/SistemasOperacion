@@ -62,9 +62,9 @@ int main (int argc, char *argv[]){
 	 * leidas desde los archivos luego de su modificacion
 	*/
 	
-// 	 for(int i=0;i<N;i++)
-// 	      imprimirParticion(i);
-	 
+	 /*
+	 imprimirTodo();
+	 */
 	
 	
 	
