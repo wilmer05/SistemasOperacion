@@ -18,8 +18,8 @@ void act(int part){
 	  if(part==N-1)
 	    for(int i=0;i<I%N;i++)
 	      modificar_particion(part,I/N+i);
-	  printf("Tiempo de la unidad en la particion %d es: %d\n",\
-			    part,Tomar_Tiempo()-tiempo_solo);
+	  printf("Tiempo de la ejecucion de la unidad encargada de\
+la particion %d es: %d\n",part,Tomar_Tiempo()-tiempo_solo);
 }
 
 
@@ -41,7 +41,10 @@ int main (int argc, char *argv[]){
 	for(int i=0;i<N;i++){
 	  if(i>=P)
 	    wait(&status);
+	  int t1 = Tomar_Tiempo();
 	  if(!fork()){
+	     printf("Tiempo de creacion de la unidad encargada \
+de la particion %d es: %d\n",i,Tomar_Tiempo()-t1);
 	    act(i);
 	    exit(0);
 	  }
@@ -57,7 +60,7 @@ int main (int argc, char *argv[]){
 	
 	t_total2 = Tomar_Tiempo();
 	
-	printf("Tiempo total de los procesos %d\n",total_proc2-total_proc1);
+	printf("\nTiempo total de los procesos: %d\n",total_proc2-total_proc1);
 	printf("Tiempo total: %d\n",t_total2-t_total1);
 	
 	/*

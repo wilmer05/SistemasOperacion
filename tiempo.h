@@ -4,6 +4,7 @@
 int t_total1,t_total2,t_proc,t_proc_2;
 int total_proc1,total_proc2;
 int proc_solo1,proc_solo2;
+int tiempo_creac1,tiempo_creac2;
 /***************************************************************************
  * Definicion de la funcion para tomar los tiempos en Solaris o Linux.
  * Retorna el tiempo en microsegundos

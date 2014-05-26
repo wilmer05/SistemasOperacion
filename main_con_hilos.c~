@@ -26,8 +26,8 @@ void *act(void *ptr){
 	      modificar_particion(part,I/N+i);
 	  
 	  pthread_mutex_unlock(&ms[hilo]);
-	  printf("Tiempo de la unidad de hilo %d, encargado de la\
-particion %d es :%d\n",\
+	  printf("Tiempo de ejecucion de la unidad de hilo %d, \
+encargado de la particion %d es : %d\n",\
 				  hilo,part,Tomar_Tiempo()-tiempo_solo);
 }
 
@@ -57,7 +57,10 @@ int main (int argc, char *argv[]){
 	  hilos[i].x=i;
 	  
 	  //Actualizo la particion i con el thread j
+	  tiempo_creac1 = Tomar_Tiempo();
 	  pthread_create(&ids[i],NULL,act,(void *)&hilos[i]);
+	  printf("Tiempo de creacion de la unidad encargada \
+de la particion %d es: %d\n",i,Tomar_Tiempo()-tiempo_creac1);
 	  j++;
 	  j%=P;
 	}
@@ -71,13 +74,14 @@ int main (int argc, char *argv[]){
 	
 	t_total2 = Tomar_Tiempo();
 	
-	printf("Tiempo total de los procesos %d\n",total_proc2-total_proc1);
+	printf("\nTiempo total de los procesos: %d\n",total_proc2-total_proc1);
 	printf("Tiempo total de ejecucion: %d\n",t_total2-t_total1);
 	/*
 	 * Descomentar el siguiente codigo si quiere que 
 	 * se impriman las particiones
 	 * leidas desde los archivos luego de su modificacion
 	*/
+	
 	
 	 /*
 	 imprimirTodo();

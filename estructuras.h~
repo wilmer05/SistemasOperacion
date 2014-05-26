@@ -81,16 +81,17 @@
 	  char f[] = "Part.      ";
 	  snprintf(f+5,5,"%d",val+1);
 	  
-	  files[val] = fopen(f,"r+");
-	  fseek(files[val], 0,SEEK_SET);
+	  FILE *fp;
+	  fp = fopen(f,"r+");
+	  fseek(fp, 0,SEEK_SET);
 	  
 	  for(int i=0;i<I/N;i++){
-	    fread(&k,sizeof (inodo),1,files[val]);
+	    fread(&k,sizeof (inodo),1,fp);
 	    print_inodo(&k);
 	  }
 	  if(val==N-1)
 	    for(int i=0;i<I%N;i++){
-	      fread(&k,sizeof (inodo),1,files[val]);
+	      fread(&k,sizeof (inodo),1,fp);
 	      print_inodo(&k);
 	    }
 	  
