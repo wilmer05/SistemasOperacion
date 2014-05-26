@@ -69,7 +69,8 @@ de la particion %d es: %d\n",i,Tomar_Tiempo()-tiempo_creac1);
 	total_proc2 = Tomar_Tiempo();
 	
 	//termine de modificar y espere a que se modificara todo
-	//y cierro los descriptores para que se guarde
+	//y cierro los descriptores para que se guarden las 
+	//modificaciones hechas en las particiones
 	cierroParticiones();
 	
 	t_total2 = Tomar_Tiempo();

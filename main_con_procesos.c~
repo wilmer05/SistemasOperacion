@@ -60,7 +60,7 @@ de la particion %d es: %d\n",i,Tomar_Tiempo()-t1);
 	
 	t_total2 = Tomar_Tiempo();
 	
-	printf("\nTiempo total de los procesos %d\n",total_proc2-total_proc1);
+	printf("\nTiempo total de los procesos: %d\n",total_proc2-total_proc1);
 	printf("Tiempo total: %d\n",t_total2-t_total1);
 	
 	/*

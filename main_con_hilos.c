@@ -1,3 +1,4 @@
+//Codigo hecho por: Wilmer Bandres. Carnet: 10-10055
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
