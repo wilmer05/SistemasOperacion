@@ -1,0 +1,13 @@
+mk /file1.dat
+md /Cursos
+md /Juegos
+md /Cursos/ci-3881
+md /Cursos/ci-3881/DIR1
+md /Cursos/ci-3881/DIR2
+md /Cursos/ci-3881/DIR3
+md /Cursos/ci-3881/DIR2/DIR4
+md /Cursos/bla
+md /Cursos/bla/ble
+mk /file2.tex
+rm /file1.dat
+rm /file2.tex

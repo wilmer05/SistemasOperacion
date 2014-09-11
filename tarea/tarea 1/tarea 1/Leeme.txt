@@ -1,0 +1,67 @@
+Autor: Wilmer Bandres
+Carnet: 10-10055
+fecha: 06-03-2014
+
+#####################################################################
+
+Lo que hace el programa es simplemente  leer los comandos del archivo
+de entrada que puede ser mk,md, o rm, dependiendo de si se va a crear
+un archivo o crear un directorio o borrar un archivo o directorio, 
+respectivamente.
+
+
+Al ir leyendo los comando se va creando un "arbol de directorios"
+dependiendo de los tipos de comandos a ejecutar y finalmente
+se imprime en pantalla el "arbol de directorios" resultante.
+
+
+El programa hace uso de una lista generica creada por mi mismo, que 
+se encuentra en el archivo lista.c y es el corazon de la manera en 
+que se va creando el archivo de directorios.
+
+
+Ademas, el programa posee varias estructuras, como son las cajas 
+(que es lo que contiene la lista), las listas, y los file que
+representan cada uno de los archivos que se van creando en el arbol.
+
+
+
+#####################################################################
+Como se compila:
+
+	simplemente ejecutando el comando make, el archivo de Makefile se encargara de hacer el resto
+
+
+#####################################################################
+
+Forma en que se invoca el programa:
+
+fileTree <archivo_de_entrada>
+
+
+#####################################################################
+
+Entrada: por cada linea del archivo de entrada esta tiene que ser una 
+linea de la forma
+
+mk <ruta_archivo>
+
+o puede ser de la forma
+
+md <ruta_directorio>
+
+
+o puede ser de la forma
+
+rm <ruta_archivo_o_ruta_directorio>
+
+
+#######################################################################
+
+La salida que produce el programa es un recorrido en bfs sobre el arbol
+de directorios creados a partir de los comandos que tenia el archivo de 
+entrada
+
+#######################################################################
+
+
